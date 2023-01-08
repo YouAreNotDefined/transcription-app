@@ -1,0 +1,33 @@
+version: '3.8'
+
+volumes:
+  mysql:
+  app:
+
+services:
+  db:
+    ports:
+      - '3306:3306'
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    restart: always
+    volumes:
+      - mysql:/var/lib/mysql
+  app:
+    image: node:18.12.1-alpine3.16
+    command: sh -c "npm i && npm run dev"
+    environment:
+      DATABASE_URL: $API_DATABASE_URL
+      MYSQL_HOST: $MYSQL_HOST
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    tty: true
+    volumes:
+      - ./app:/app
+    ports:
+      - 3050:3050
+    restart: always
+    working_dir: /app
