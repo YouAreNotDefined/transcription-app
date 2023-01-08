@@ -31,15 +31,16 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-azuretools.vscode-docker",
-        "oderwat.indent-rainbow",
-        "octref.vetur",
-        "znck.vue",
-        "hollowtree.vue-snippets",
-        "sdras.vue-vscode-snippets",
-        "vuetifyjs.vuetify-vscode",
-        "Prisma.prisma"
-      ]
+		"ms-azuretools.vscode-docker",
+		"oderwat.indent-rainbow",
+		"octref.vetur",
+		"znck.vue",
+		"hollowtree.vue-snippets",
+		"sdras.vue-vscode-snippets",
+		"vuetifyjs.vuetify-vscode",
+		"Prisma.prisma",
+		"Vue.volar"
+	]
     }
   }
 
